@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap')
+
+$desaturated-red: hsl(0, 36%, 70%)
+$soft-red: hsl(0, 93%, 68%)
+
+//### neutral
+
+$dark-grayish-red: hsl(0, 6%, 24%)
+
+//### gradients
+
+$gradiente1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+$gradiente2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%))
+
+// typography
+
+//# body copy
+
+$font-size: 16px
+
+//# font
+
+$family: 'Josefin Sans', sans-serif // 300, 400, 600
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+html
+    font-size: $font-size
+
+body
+    font-family: $family
+    background: $dark-grayish-red
+    
+.flag
+    position: absolute
+    top: 0
+    margin-top: 5px
+    border-top-right-radius: 1rem
+    border-bottom-right-radius: 1rem
+    background: #2e2e2e
+    width: 120px
+    height: 50px
+    transition: all 1s
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #fff
+    font-family: sans-serif
+    text-transform: uppercase
+    font-weight: 700
+    font-size: 16px
+    &:hover
+        width: 400px
+        color: transparent
+        .attribution
+            width: 400px
+            opacity: 1
+
+.attribution
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: all 1s
+    width: 0
+    font-size: 16px
+    text-align: center
+    opacity: 0
+    white-space: nowrap
+    overflow: hidden
+    font-family: sans-serif
+    color: #fff
+    text-decoration: none
+    a
+        color: #fff
+
+
+.cardcon
+    display: flex
+    justify-content: center
+    align-items: center
+    
+
+.card
+    background: url("../images/bg-pattern-desktop.svg"), #fff
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    overflow: hidden
+    &__details
+        max-width: 670px
+        padding: 0 5rem
+    &__title
+        margin-top: 4rem
+        font-size: 4rem
+        text-transform: uppercase
+        span
+            color: $desaturated-red
+            font-weight: 300
+    &__paragraph
+        margin-top: 2rem
+        line-height: 1.6rem
+        max-width: 25rem
+        color: $desaturated-red
+    &__logo
+        margin-top: 4rem
+        &--mobile
+            display: none
+    &__image    
+        height: 100vh
+        display: block
+        &--mobile
+            display: none
+.form
+    position: relative
+    width: fit-content
+    height: fit-content
+    margin-right: auto
+    margin-top: 2rem
+    &__input
+        border-radius: 2rem
+        border: 1px solid #999
+        padding-left: 2rem
+        height: 50px
+        width: 350px
+        background: transparent
+    &__iconerror
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 90px
+        opacity: 0
+        &--active
+            opacity: 1
+    &__labelerror
+        position: absolute
+        top: 60px
+        left: 10px
+        color: $soft-red
+        opacity: 0
+        &--active
+            opacity: 1
+    &__button
+        position: absolute
+        right: 0
+        border-radius: 2rem
+        background: $gradiente2
+        border: none
+        width: 80px
+        height: 50px
+        &:hover
+            cursor: pointer
+            opacity: 0.7
+
+@media screen and (max-width: 960px)
+    .card
+        flex-direction: column-reverse
+        &__image
+            display: none
+            &--mobile
+                width: 100%
+                height: 100%
+                display: block
+        &__paragraph
+            text-align: center
+            max-width: 95vw
+            margin-top: 2rem
+        &__title
+            font-size: 2.2rem
+            text-align: center
+        &__logo
+            display: none
+            &--mobile
+                display: block
+                margin: 1rem
+    .form
+        margin: auto
+        margin-top: 2rem
+        width: 90%
+        margin-bottom: 2rem
+        &__input
+            width: 100%
+        &__iconerror
+
+@media screen and (max-width: 500px)
+    .card    
+        &__details
+            padding: 1rem
+
+
+@media screen and (max-width: 960px)
+    .flag
+        right: 0
+        border-top-left-radius: 1rem
+        &:hover
+            width: 310px
+            & .attribution
+                width: 310px
+
+
+
+            
+        
